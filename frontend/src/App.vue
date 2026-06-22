@@ -109,7 +109,7 @@ onMounted(() => {
 
 /* ── Main ── */
 .main {
-  flex: 1; max-width: 660px; width: 100%; margin: 0 auto; padding: 32px 16px 48px;
+  flex: 1; max-width: 960px; width: 100%; margin: 0 auto; padding: 32px 16px 48px;
 }
 
 /* ── Footer ── */

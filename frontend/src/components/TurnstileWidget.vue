@@ -44,11 +44,12 @@ function renderWidget(theme: string) {
   } catch { error.value = '验证组件加载失败'; }
 }
 
-onMounted(async () => {
-  await loadScript();
-  await nextTick();
-  await new Promise(r => setTimeout(r, 100));
-  renderWidget(props.theme || 'auto');
+onMounted(() => {
+  loadScript()
+    .then(() => nextTick())
+    .then(() => new Promise(r => setTimeout(r, 100)))
+    .then(() => renderWidget(props.theme || 'auto'))
+    .catch(() => { error.value = '验证组件加载失败'; });
 });
 
 // Re-render when theme changes

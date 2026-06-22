@@ -1,0 +1,25 @@
+{
+  "name": "filecodebox",
+  "version": "1.0.0",
+  "description": "FileCodeBox - Anonymous file sharing on Cloudflare Workers",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "vitest",
+    "db:migrate:local": "wrangler d1 execute filecodebox-db --local --file=migrations/001_initial.sql",
+    "db:migrate:prod": "wrangler d1 execute filecodebox-db --file=migrations/001_initial.sql"
+  },
+  "dependencies": {
+    "fflate": "^0.8.2",
+    "hono": "^4.6.14",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.5.0",
+    "@cloudflare/workers-types": "^4.20250620.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.0",
+    "wrangler": "^3.110.0"
+  }
+}

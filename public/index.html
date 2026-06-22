@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FileShare — 文件快递柜</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    /* ── Day theme (default, overridden to dark by JS if needed) ── */
+    :root {
+      --bg-base: #faf7f2;
+      --bg-card: #ffffff;
+      --bg-input: #f5f0e8;
+      --bg-hover: #ede6d9;
+      --border: #e0d6c5;
+      --border-focus: #b45309;
+      --text-primary: #29211b;
+      --text-secondary: #6b5e50;
+      --text-muted: #9c8d7a;
+      --accent: #b45309;
+      --accent-light: #d97706;
+      --accent-glow: rgba(180, 83, 9, 0.1);
+      --danger: #dc2626;
+      --danger-bg: rgba(220, 38, 38, 0.08);
+      --success: #4d7c0f;
+      --success-bg: rgba(77, 124, 15, 0.08);
+      --warning: #a16207;
+      --warning-bg: rgba(161, 98, 7, 0.08);
+      --radius: 12px;
+      --radius-sm: 8px;
+      --radius-xs: 6px;
+      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    /* ── Night theme ── */
+    :root.dark {
+      --bg-base: #1c1917;
+      --bg-card: #292524;
+      --bg-input: #1e1b1a;
+      --bg-hover: #33302e;
+      --border: #3d3835;
+      --border-focus: #d97706;
+      --text-primary: #f5f0e8;
+      --text-secondary: #a8a29e;
+      --text-muted: #78716c;
+      --accent: #d97706;
+      --accent-light: #f59e0b;
+      --accent-glow: rgba(217, 119, 6, 0.15);
+      --danger: #ef4444;
+      --danger-bg: rgba(239, 68, 68, 0.1);
+      --success: #65a30d;
+      --success-bg: rgba(101, 163, 13, 0.1);
+      --warning: #ca8a04;
+      --warning-bg: rgba(202, 138, 4, 0.1);
+      --shadow: 0 1px 3px rgba(0,0,0,0.4), 0 4px 24px rgba(0,0,0,0.3);
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg-base);
+      color: var(--text-primary);
+      min-height: 100vh;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      transition: background-color 0.25s, color 0.25s;
+    }
+    #app { min-height: 100vh; }
+  </style>
+  <script>
+    (function() {
+      var theme = localStorage.getItem('theme') || 'system';
+      var isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      // Default :root is light; only add .dark class when dark mode is wanted
+      if (isDark) document.documentElement.classList.add('dark');
+      // Store the theme mode for Vue to read
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+  <script type="module" crossorigin src="/assets/index-sbjo978I.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-HYiznd3T.css">
+</head>
+<body><div id="app"></div></body>
+</html>

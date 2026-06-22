@@ -1,0 +1,22 @@
+name = "filecodebox-cleanup"
+main = "src/index.ts"
+compatibility_date = "2025-06-01"
+
+# ---- D1 Database (same as Pages) ----
+[[d1_databases]]
+binding = "DB"
+database_name = "filecodebox-db"
+database_id = "57a52704-5fec-4a79-a902-301ff9a93ea4"
+
+# ---- R2 Bucket (same as Pages) ----
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "filecodebox-storage"
+
+# ---- Cron: every 10 minutes ----
+[triggers]
+crons = ["*/10 * * * *"]
+
+# ---- Environment Variables ----
+[vars]
+CHUNK_EXPIRE_HOURS = "24"

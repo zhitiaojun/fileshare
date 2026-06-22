@@ -1,0 +1,20 @@
+# Cloudflare Pages configuration
+name = "filecodebox"
+compatibility_date = "2025-06-01"
+compatibility_flags = ["nodejs_compat"]
+
+pages_build_output_dir = "public"
+
+# ---- D1 Database ----
+[[d1_databases]]
+binding = "DB"
+database_name = "filecodebox-db"
+database_id = "57a52704-5fec-4a79-a902-301ff9a93ea4"
+
+# ---- R2 Bucket ----
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "filecodebox-storage"
+
+# Environment variables (secrets set via `wrangler pages secret put`)
+# TURNSTILE_SECRET_KEY is stored as a Pages Secret
